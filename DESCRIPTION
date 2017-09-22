@@ -1,0 +1,21 @@
+Package: tmvn
+Type: Package
+Title: Generate random samples from truncated univariate and multivariate normal
+  distributions and truncated Student-t distributions. 
+Version: 1.0
+Authors@R: c(
+    person("Suchit", "Mehrotra", email = "suchitmehrotra@gmail.com", role = "cre"),
+    person("Yifang", "Li", email = "yli40@ncsu.edu", role = "aut"), 
+    person("Sujit", "Ghosh", email = "sujit_ghosh@ncsu.edu"))
+Author: Suchit Mehrotra, Yifang Li, Sujit Ghosh
+Maintainer: Suchit Mehrotra <suchitmehrotra@gmail.com>
+Description: This package contains functions to generate random samples from 
+  truncated univariate and multivariate normal distributions subject to linear
+  inequality constraints. Random generation from the truncated 
+  multivariate Student-t distribution is also available. Please refer to 
+  Li & Ghosh (2015) for details. 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
+Imports: stats

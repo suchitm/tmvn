@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "Mean = c(10,-10)\nrho = 0.5\nSigma = matrix(c(10,rho,rho,0.1),2,2)\nD = matrix(c(1,1,1,-1),2,2)\nvarp = Sigma[1,1]+Sigma[2,2]+2*Sigma[1,2] # var of the sum\nvarm = Sigma[1,1]+Sigma[2,2]-2*Sigma[1,2] # var of the diff\nsd = c(sqrt(varp),sqrt(varm))\nlower = -3*sd; upper = 3*sd; int = rep(0,2)\nn = 20\n\nseed = sample(1:1000, size = 1)\nset.seed(seed)\ny = rtmvn(n,Mean,Sigma,D,lower,upper,int)\n\nset.seed(seed)\nx = rtmvn_leg(n, Mean, Sigma, D, lower, upper, int)\n\nx == y\n\n\n\nset.seed(1234)\nexp_rej(3, 10, NULL)\nset.seed(1234)\nexp.rej(3, 10, 'opt')\n\na = -100\nb = -10\n\nset.seed(1234)\nsample_tuvsn(a, b)\nset.seed(1234)\nimp(a, b)\n\n\n\n\n# # exponential rejection\n# library(stats)\n# exp.rej <- function(a,b=Inf,lam='default'){\n#   if (lam=='opt'){lambda <- ( a+sqrt(a^2+4) )/2} else {lambda=a}\n#   acc <- 0\n#   # rho is continuous at lambda=a, so don't need to change the expression of rho\n#   repeat{\n#     x <- rweibull(1,shape=1,scale=1/lambda)+a\n#     u <- runif(1)\n#     rho <- exp(-(x-lambda)^2/2)\n#     acc <- acc+1 # accept x at acc-th draw\n#     if (u <= rho & x<b)\n#       return(list(x=x,acc=acc))\n#   }\n# }\n#\n# # exponential rejection\n# exp_rej <- function(a, b = Inf, lambda = NULL)\n# {\n#   if (is.null(lambda))\n#   {\n#     lambda = (a + sqrt(a^2 + 4))/2\n#   } else {\n#     lambda = lambda\n#   }\n#   acc = 0\n#   # rho is continuous at lambda=a, so don't need to change the expression of rho\n#   repeat{\n#     # x = rweibull(1, shape = 1, scale = 1 / lambda) + a\n#     x = rexp(1, rate = lambda) + a\n#     u = runif(1)\n#     rho = exp(-(x - lambda)^2/2)\n#     acc = acc + 1\n#\n#     if (u <= rho & x<b)\n#       return(list(x = x, acc = acc))\n#   }\n# }\n#\n# a = 10\n# b = 100\n# n = 1000\n# pack = leg = rep(0, n)\n# sim_n = 1000\n# pvals = rep(NA, sim_n)\n#\n# for(j in 1:sim_n)\n# {\n#   for(i in 1:n)\n#   {\n#     pack[i] = exp_rej(a, b, NULL)$x\n#     leg[i] = exp.rej(a, b, 'opt')$x\n#   }\n#\n#   pvals[j] = ks.test(pack, leg)$p.value\n# }\n",
+    "created" : 1506003138850.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2580577142",
+    "id" : "2B66F226",
+    "lastKnownWriteTime" : 1506025220,
+    "last_content_update" : 1506025220460,
+    "path" : "~/Dropbox/Research/tmvn_legacy/test_old_new.R",
+    "project_path" : null,
+    "properties" : {
+        "marks" : "<:13,-1\n>:13,0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
