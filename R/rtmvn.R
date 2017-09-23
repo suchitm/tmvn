@@ -109,5 +109,5 @@ rtmvn = function(n, Mean, Sigma, D, lower, upper, init)
     x <- Sigma_chol %*% z + Mean
     keep_x[, i] <- x
   }
-  return(keep.x)
+  return(keep_x)
 }
