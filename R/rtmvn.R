@@ -11,8 +11,8 @@
 #' @param upper vector of upper bounds
 #' @param init vector of initial values for the Gibbs sampler. Must satisfy
 #'     the linear constraints.
-#' @param Sigma_chol the cholesky of the covariance matrix. Only one of Sigma
-#'     and Sigma_chol can be NULL.
+#' @param Sigma_chol the lower triangular cholesky of the covariance matrix.
+#'     Only one of Sigma and Sigma_chol can be NULL.
 #'
 #' @return a matrix of samples with each column being an idependent sample.
 #'
