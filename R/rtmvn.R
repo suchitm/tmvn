@@ -11,6 +11,8 @@
 #' @param upper vector of upper bounds
 #' @param init vector of initial values for the Gibbs sampler. Must satisfy
 #'     the linear constraints.
+#' @param Sigma_chol the cholesky of the covariance matrix. Only one of Sigma
+#'     and Sigma_chol can be NULL.
 #'
 #' @return a matrix of samples with each column being an idependent sample.
 #'
@@ -35,12 +37,18 @@
 #'
 
 # Truncated Multivariate Normal Sampler
-rtmvn = function(n, Mean, Sigma, D, lower, upper, init)
+rtmvn = function(n, Mean, Sigma = NULL, D, lower, upper, init,
+                 Sigma_chol = NULL)
 {
   inits_test = D %*% init
   if((prod(inits_test >= lower & inits_test <= upper)) == 0)
   {
     stop("initial value outside bounds. \n")
+  }
+
+  if(is.null(Sigma) & is.null(Sigma_chol))
+  {
+    stop("Must supply either Sigma or Sigma_chol")
   }
 
   if(is.vector(D) == TRUE)
@@ -55,7 +63,10 @@ rtmvn = function(n, Mean, Sigma, D, lower, upper, init)
   # standardizing the problem
   a = lower - Rtilde %*% Mean
   b = upper - Rtilde %*% Mean
-  Sigma_chol = t(chol(Sigma))
+  if(is.null(Sigma_chol))
+  {
+    Sigma_chol = t(chol(Sigma))
+  }
   R = Rtilde %*% Sigma_chol
 
   p = ncol(R)
