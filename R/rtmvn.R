@@ -113,12 +113,12 @@ rtmvn = function(n, Mean, Sigma = NULL, D, lower, upper, init,
       lower_j = max(lower_pos, lower_neg)
       upper_j = min(upper_pos, upper_neg)
 
-      z[j] <- rtuvn(lower = lower_j, upper = upper_j)
+      z[j] = rtuvn(lower = lower_j, upper = upper_j)
     }
 
     # for the original results
-    x <- Sigma_chol %*% z + Mean
-    keep_x[, i] <- x
+    x = Sigma_chol %*% z + Mean
+    keep_x[, i] = x
   }
   return(keep_x)
 }

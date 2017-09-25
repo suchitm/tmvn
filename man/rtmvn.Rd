@@ -22,8 +22,8 @@ rtmvn(n, Mean, Sigma = NULL, D, lower, upper, init, Sigma_chol = NULL)
 \item{init}{vector of initial values for the Gibbs sampler. Must satisfy
 the linear constraints.}
 
-\item{Sigma_chol}{the cholesky of the covariance matrix. Only one of Sigma
-and Sigma_chol can be NULL.}
+\item{Sigma_chol}{the lower triangular cholesky of the covariance matrix.
+Only one of Sigma and Sigma_chol can be NULL.}
 }
 \value{
 a matrix of samples with each column being an idependent sample.
