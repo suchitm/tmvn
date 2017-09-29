@@ -18,15 +18,15 @@
 #' @export
 
 # Case 1: [a,infty)
-sample_case1 = function(a, b = Inf)
+sample_case1_r = function(a, b = Inf)
 {
   if (a <= 0)
   {
-    samp = norm_rej(a = a, b = b)
+    samp = norm_rej_r(a = a, b = b)
   } else if (a < 0.25696) {
-      samp = halfnorm_rej(a = a, b = b)
+      samp = halfnorm_rej_r(a = a, b = b)
   } else {
-      samp = exp_rej(a = a, b = b, lambda = NULL)
+      samp = exp_rej_r(a = a, b = b, lambda = NULL)
   }
   return(samp)
 }
@@ -48,13 +48,13 @@ sample_case1 = function(a, b = Inf)
 #' @export
 
 # Case 2: 0 in [a,b], a<0<b
-sample_case2 = function(a, b)
+sample_case2_r = function(a, b)
 {
-  if (b > lower_b(a))
+  if (b > lower_b_r(a))
   {
-    samp = norm_rej(a = a, b = b)
+    samp = norm_rej_r(a = a, b = b)
   } else {
-    samp = unif_rej(a = a, b = b)
+    samp = unif_rej_r(a = a, b = b)
   }
   return(samp)
 }
@@ -76,24 +76,24 @@ sample_case2 = function(a, b)
 #' @export
 
 # Case 3: [a,b], a>0
-sample_case3 = function(a, b)
+sample_case3_r = function(a, b)
 {
   if (a < 0.25696)
   {
-    blower1 = lower_b1(a)
+    blower1 = lower_b1_r(a)
     if (b <= blower1)
     {
-      samp = unif_rej(a = a, b = b)
+      samp = unif_rej_r(a = a, b = b)
     } else {
-      samp = halfnorm_rej(a = a, b = b)
+      samp = halfnorm_rej_r(a = a, b = b)
     }
   } else {
-    blower2 = lower_b2(a)
+    blower2 = lower_b2_r(a)
     if (b <= blower2)
     {
-      samp = unif_rej(a = a, b = b)
+      samp = unif_rej_r(a = a, b = b)
     } else {
-      samp = exp_rej(a = a, b = b)
+      samp = exp_rej_r(a = a, b = b)
     }
   }
   return(samp)
@@ -116,9 +116,9 @@ sample_case3 = function(a, b)
 #' @export
 
 # Case 4: (-infty,b] (symmetric to Case 1)
-sample_case4 = function(a, b)
+sample_case4_r = function(a, b)
 {
-  temp = sample_case1(a= -b, b = -a)
+  temp = sample_case1_r(a= -b, b = -a)
   samp = list(x = -temp$x, acc = temp$acc)
   return(samp)
 }
@@ -140,9 +140,9 @@ sample_case4 = function(a, b)
 #' @export
 
 # Case 5: [a,b], b<=0 (symmetric to Case 3)
-sample_case5 <- function(a, b)
+sample_case5_r <- function(a, b)
 {
-  temp = sample_case3(a = -b, b = -a)
+  temp = sample_case3_r(a = -b, b = -a)
   samp = list(x = -temp$x, acc = temp$acc)
   return(samp)
 }
@@ -164,23 +164,23 @@ sample_case5 <- function(a, b)
 #' @export
 
 ## Final rejection sampling
-sample_tuvsn <- function(a, b)
+sample_tuvsn_r <- function(a, b)
 {
   if (a == -Inf | b == Inf)
   {
     if (b == Inf)
     {
-      samp <- sample_case1(a=a,b=b)
+      samp <- sample_case1_r(a=a,b=b)
     } else {
-        samp <- sample_case4(a=a,b=b)
+        samp <- sample_case4_r(a=a,b=b)
     }
   } else {
     if(a >= 0) {
-      samp = sample_case3(a = a, b = b)
+      samp = sample_case3_r(a = a, b = b)
     } else if (b <= 0) {
-      samp = sample_case5(a = a, b = b)
+      samp = sample_case5_r(a = a, b = b)
     } else {
-      samp = sample_case2(a = a, b = b)
+      samp = sample_case2_r(a = a, b = b)
     }
   }
   return(samp)

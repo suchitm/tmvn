@@ -19,7 +19,7 @@
 #' @export
 
 # lower bound of b for normal vs unif in 0 in [a,b]
-lower_b <- function(a)
+lower_b_r <- function(a)
 {
   sqrt(2 * pi) + a
 }
@@ -40,7 +40,7 @@ lower_b <- function(a)
 #' @export
 
 # lower bound of b for half vs unif in [a,b]>=0
-lower_b1 = function(a)
+lower_b1_r = function(a)
 {
   sqrt(pi / 2) * exp(a^2 / 2) + a
 }
@@ -61,7 +61,7 @@ lower_b1 = function(a)
 #' @export
 
 # lower bound of b for exp vs unif in [a,b]>=0
-lower_b2 = function(a)
+lower_b2_r = function(a)
 {
   lambda = (a + sqrt(a^2 + 4)) / 2
   return(a + exp(1/2) / lambda * exp((a^2 - a * sqrt(a^2 + 4)) / 4))

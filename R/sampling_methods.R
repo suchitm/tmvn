@@ -13,7 +13,7 @@
 #' @export
 
 # normal rejection
-norm_rej = function(a, b = Inf)
+norm_rej_r = function(a, b = Inf)
 {
   acc = 0
   repeat
@@ -39,7 +39,7 @@ norm_rej = function(a, b = Inf)
 #' @export
 
 # half-normal rejection
-halfnorm_rej = function(a, b)
+halfnorm_rej_r = function(a, b)
 {
   acc = 0
   repeat
@@ -65,7 +65,7 @@ halfnorm_rej = function(a, b)
 #' @export
 
 # uniform rejection
-unif_rej = function(a, b)
+unif_rej_r = function(a, b)
 {
   acc = 0
   repeat
@@ -77,6 +77,9 @@ unif_rej = function(a, b)
     if (0 >= a & 0 <= b) {rho = exp(-x^2/2)}
     if (a > 0){rho = exp(-(x^2 - a^2) / 2)}
     if (b < 0){rho = exp(-(x^2 - b^2) / 2)}
+
+    print(paste("rho =", round(rho, 4), "u =", round(u, 4)))
+    print(paste("x = ", round(x, 4)))
 
     acc = acc + 1
     if (u <= rho)
@@ -98,9 +101,8 @@ unif_rej = function(a, b)
 #'     linear inequality constraints. Journal of Statistical Theory and
 #'     Practice, 9(4), 712-732.
 #' @export
-
 # exponential rejection
-exp_rej <- function(a, b = Inf, lambda = NULL)
+exp_rej_r <- function(a, b = Inf, lambda = NULL)
 {
   if (is.null(lambda))
   {

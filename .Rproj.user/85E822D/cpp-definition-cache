@@ -1,2 +1,164 @@
 [
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/include/lower_b.hpp",
+        "file_last_write" : 1506693216
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/include/sampling_methods.hpp",
+        "file_last_write" : 1506692778
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/lower_b.cpp",
+                "kind" : 6,
+                "line" : 19,
+                "name" : "lower_b(double)",
+                "parent_name" : "",
+                "usr" : "c:@F@lower_b#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/lower_b.cpp",
+                "kind" : 6,
+                "line" : 39,
+                "name" : "lower_b1(double)",
+                "parent_name" : "",
+                "usr" : "c:@F@lower_b1#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/lower_b.cpp",
+                "kind" : 6,
+                "line" : 59,
+                "name" : "lower_b2(double)",
+                "parent_name" : "",
+                "usr" : "c:@F@lower_b2#d#"
+            }
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/lower_b.cpp",
+        "file_last_write" : 1506688800
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+                "kind" : 6,
+                "line" : 28,
+                "name" : "sample_case1(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sample_case1#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+                "kind" : 6,
+                "line" : 58,
+                "name" : "sample_case2(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sample_case2#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+                "kind" : 6,
+                "line" : 87,
+                "name" : "sample_case3(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sample_case3#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+                "kind" : 6,
+                "line" : 126,
+                "name" : "sample_case4(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sample_case4#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+                "kind" : 6,
+                "line" : 148,
+                "name" : "sample_case5(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sample_case5#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+                "kind" : 6,
+                "line" : 170,
+                "name" : "sample_tuvsn(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@sample_tuvsn#d#d#"
+            }
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
+        "file_last_write" : 1506711135
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
+                "kind" : 6,
+                "line" : 18,
+                "name" : "norm_rej(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@norm_rej#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
+                "kind" : 6,
+                "line" : 44,
+                "name" : "halfnorm_rej(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@halfnorm_rej#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
+                "kind" : 6,
+                "line" : 71,
+                "name" : "unif_rej(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@unif_rej#d#d#"
+            },
+            {
+                "column" : 8,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
+                "kind" : 6,
+                "line" : 101,
+                "name" : "exp_rej(double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@exp_rej#d#d#"
+            }
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
+        "file_last_write" : 1506687748
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 15,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/timesTwo.cpp",
+                "kind" : 6,
+                "line" : 16,
+                "name" : "timesTwo(NumericVector)",
+                "parent_name" : "",
+                "usr" : "c:@F@timesTwo#$@N@Rcpp@C@Vector>#VI14#@N@Rcpp@CT>1#T@PreserveStorage#"
+            }
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/timesTwo.cpp",
+        "file_last_write" : 1506607151
+    }
 ]
