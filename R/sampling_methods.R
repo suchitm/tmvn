@@ -78,9 +78,6 @@ unif_rej_r = function(a, b)
     if (a > 0){rho = exp(-(x^2 - a^2) / 2)}
     if (b < 0){rho = exp(-(x^2 - b^2) / 2)}
 
-    print(paste("rho =", round(rho, 4), "u =", round(u, 4)))
-    print(paste("x = ", round(x, 4)))
-
     acc = acc + 1
     if (u <= rho)
       return(list(x = x, acc = acc))

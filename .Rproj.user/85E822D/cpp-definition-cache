@@ -8,6 +8,18 @@
     {
         "definitions" : [
         ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/include/rtuvn.hpp",
+        "file_last_write" : 1506715746
+    },
+    {
+        "definitions" : [
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/include/samp_cases.hpp",
+        "file_last_write" : 1506711262
+    },
+    {
+        "definitions" : [
+        ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/include/sampling_methods.hpp",
         "file_last_write" : 1506692778
     },
@@ -43,6 +55,36 @@
         ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/lower_b.cpp",
         "file_last_write" : 1506688800
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtmvn.cpp",
+                "kind" : 6,
+                "line" : 42,
+                "name" : "rtmvn_gibbs(int, int, arma::vec, arma::mat, arma::mat, arma::vec, arma::vec, arma::vec)",
+                "parent_name" : "",
+                "usr" : "c:@F@rtmvn_gibbs#I#I#$@N@arma@C@Col>#d#$@N@arma@C@Mat>#d#S1_#S0_#S0_#S0_#"
+            }
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtmvn.cpp",
+        "file_last_write" : 1506736272
+    },
+    {
+        "definitions" : [
+            {
+                "column" : 11,
+                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtuvn.cpp",
+                "kind" : 6,
+                "line" : 34,
+                "name" : "rtuvn(int, double, double, double, double)",
+                "parent_name" : "",
+                "usr" : "c:@F@rtuvn#I#d#d#d#d#"
+            }
+        ],
+        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtuvn.cpp",
+        "file_last_write" : 1506715525
     },
     {
         "definitions" : [
@@ -145,20 +187,5 @@
         ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
         "file_last_write" : 1506687748
-    },
-    {
-        "definitions" : [
-            {
-                "column" : 15,
-                "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/timesTwo.cpp",
-                "kind" : 6,
-                "line" : 16,
-                "name" : "timesTwo(NumericVector)",
-                "parent_name" : "",
-                "usr" : "c:@F@timesTwo#$@N@Rcpp@C@Vector>#VI14#@N@Rcpp@CT>1#T@PreserveStorage#"
-            }
-        ],
-        "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/timesTwo.cpp",
-        "file_last_write" : 1506607151
     }
 ]

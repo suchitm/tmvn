@@ -14,7 +14,7 @@
 #   Test Package:              'Ctrl + Shift + T'
 
 #' @useDynLib tmvn
-#' @importFrom Rcpp sourceCpp
+#' @importFrom Rcpp evalCpp
 NULL
 
 hello <- function() {

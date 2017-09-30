@@ -21,7 +21,7 @@
 #'
 #' @export
 
-rtuvn = function(n = 1, mean = 0, sd = 1, lower, upper)
+rtuvn_r = function(n = 1, mean = 0, sd = 1, lower, upper)
 {
   # transform the boundaries
   a <- (lower - mean)/sd
@@ -31,7 +31,7 @@ rtuvn = function(n = 1, mean = 0, sd = 1, lower, upper)
   Z <- rep(0,n)
   for (i in 1:n)
   {
-    temp <- sample_tuvsn(a,b)
+    temp <- sample_tuvsn_r(a,b)
     Z[i] <- temp$x
   }
 

@@ -55,6 +55,68 @@ lower_b2 <- function(a) {
     .Call('_tmvn_lower_b2', PACKAGE = 'tmvn', a)
 }
 
+#' Truncated Multivariate Normal Distribution
+#'
+#' Random vector generation for the truncated multivariate normal distribution
+#'     using a Gibbs sampler.
+#'
+#' @param n number of samples to be generated
+#' @param p dimension of the distribution to sample
+#' @param R  matrix of linear constraints
+#' @param a vector of lower bounds
+#' @param b vector of upper bounds
+#' @param z vector of initial values for the Gibbs sampler.
+#'
+#' @return a matrix of samples with each column being an idependent sample.
+#'
+#' @references Li, Y., & Ghosh, S. K. (2015). Efficient sampling methods for
+#'     truncated multivariate normal and student-t distributions subject to
+#'     linear inequality constraints. Journal of Statistical Theory and
+#'     Practice, 9(4), 712-732.
+#'
+#' @examples
+#' Mean = rep(0,2)
+#' rho = 0.5
+#' Sigma = matrix(c(10,rho,rho,0.1),2,2)
+#' D = matrix(c(1,1,1,-1),2,2)
+#' varp = Sigma[1,1]+Sigma[2,2]+2*Sigma[1,2] # var of the sum
+#' varm = Sigma[1,1]+Sigma[2,2]-2*Sigma[1,2] # var of the diff
+#' sd = c(sqrt(varp),sqrt(varm))
+#' lower = -1.5*sd; upper = 1.5*sd; init = rep(0,2)
+#' n = 20
+#' rtmvn(n,Mean,Sigma,D,lower,upper,init)
+#'
+#' @export
+rtmvn_gibbs <- function(n, p, Mean, Sigma_chol, R, a, b, z) {
+    .Call('_tmvn_rtmvn_gibbs', PACKAGE = 'tmvn', n, p, Mean, Sigma_chol, R, a, b, z)
+}
+
+#' Univariate Truncated Normal Distribution
+#'
+#' Random number generator for the truncated normal distribution. To
+#'     calculate the density please use dtuvn.
+#'
+#' @param n number of samples
+#' @param mean mean
+#' @param sd standard deviation
+#' @param lower lower bound
+#' @param upper upper bound
+#' @return a vector of generated samples
+#'
+#' @references Li, Y., & Ghosh, S. K. (2015). Efficient sampling methods for
+#'     truncated multivariate normal and student-t distributions subject to
+#'     linear inequality constraints. Journal of Statistical Theory and
+#'     Practice, 9(4), 712-732.
+#'
+#' @examples
+#' # sample from truncated normal with mean 10, sd 20, and lower = 10, upper = 20
+#' rtuvn(n = 1, mean = 10, sd = 20, lower = 10, upper = 20)
+#'
+#' @export
+rtuvn <- function(n, mean, sd, lower, upper) {
+    .Call('_tmvn_rtuvn', PACKAGE = 'tmvn', n, mean, sd, lower, upper)
+}
+
 #' Sample Case 1
 #'
 #' generate a sample from case 1 where the bounds are \eqn{[a, \infty)}.
@@ -231,10 +293,5 @@ unif_rej <- function(a, b) {
 #' @export
 exp_rej <- function(a, b) {
     .Call('_tmvn_exp_rej', PACKAGE = 'tmvn', a, b)
-}
-
-#' @export
-timesTwo <- function(x) {
-    .Call('_tmvn_timesTwo', PACKAGE = 'tmvn', x)
 }
 

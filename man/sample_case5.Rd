@@ -12,7 +12,7 @@ sample_case5(a, b)
 \item{b}{Upper bound of truncattion}
 }
 \value{
-\item{x}{value of the sample} \item{acc}{number of proposals for acceptance}
+value of the sample
 }
 \description{
 generate a sample from case 5 where the bounds are \eqn{[a, b], b < 0}.

@@ -12,7 +12,7 @@ sample_tuvsn(a, b)
 \item{b}{Upper bound of truncattion}
 }
 \value{
-\item{x}{value of the sample} \item{acc}{number of proposals for acceptance}
+value of the sample
 }
 \description{
 Generate a sample from a truncated univariate standard normal distribution,

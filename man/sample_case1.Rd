@@ -11,6 +11,9 @@ sample_case1(a, b)
 
 \item{b}{Upper bound of truncattion}
 }
+\value{
+the value of the sample
+}
 \description{
 generate a sample from case 1 where the bounds are \eqn{[a, \infty)}.
    The cases are listed on page 4 of Li & Ghosh (2015).
