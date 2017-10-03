@@ -33,6 +33,10 @@ using namespace arma;
 // [[Rcpp::export]]
 arma::vec rtuvn(int n, double mean, double sd, double lower, double upper)
 {
+  if(lower > upper)
+  {
+    throw std::range_error("Error in rtuvn: lower is greater than upper");
+  }
   // transform the boundaries
   double a = (lower - mean) / sd;
   double b = (upper - mean) / sd;

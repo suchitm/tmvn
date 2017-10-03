@@ -175,7 +175,7 @@ double sample_tuvsn(double a, double b)
     if(b == R_PosInf)
       samp = sample_case1(a, b);
     else
-      sample_case4(a, b);
+      samp = sample_case4(a, b);
   }
   else
   {

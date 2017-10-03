@@ -77,7 +77,7 @@ double unif_rej(double a, double b)
     double rho;
 
     // cases for the ratio
-    if( (0 >= a) && (0 <= b)) {rho = exp(-1 * (x*x) / 2.0);}
+    if( (0 >= a) & (0 <= b) ) {rho = exp(-1 * (x*x) / 2.0);}
     if (a > 0) {rho = exp( -1 * (x*x - a*a) / 2.0);}
     if (b < 0) {rho = exp(-1 * (x*x - b*b) / 2.0);}
 
@@ -110,7 +110,7 @@ double exp_rej(double a, double b)
     double u = runif(1)[0];
     double rho = exp(-1 * (x - lambda) * (x - lambda) / 2.0);
 
-    if(u <= rho) {return(x);}
+    if(u <= rho & x < b) {return(x);}
   }
 }
 

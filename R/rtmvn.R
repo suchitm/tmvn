@@ -38,7 +38,7 @@
 
 # Truncated Multivariate Normal Sampler
 rtmvn = function(n, Mean, Sigma = NULL, D, lower, upper, init,
-                   Sigma_chol = NULL)
+                 Sigma_chol = NULL)
 {
   inits_test = D %*% init
   if((prod(inits_test >= lower & inits_test <= upper)) == 0)

@@ -2,7 +2,7 @@
 % Please edit documentation in R/RcppExports.R
 \name{rtmvn_gibbs}
 \alias{rtmvn_gibbs}
-\title{Truncated Multivariate Normal Distribution}
+\title{Gibbs sampler for the Truncated Multivariate Normal Distribution}
 \usage{
 rtmvn_gibbs(n, p, Mean, Sigma_chol, R, a, b, z)
 }
@@ -25,19 +25,6 @@ a matrix of samples with each column being an idependent sample.
 \description{
 Random vector generation for the truncated multivariate normal distribution
     using a Gibbs sampler.
-}
-\examples{
-Mean = rep(0,2)
-rho = 0.5
-Sigma = matrix(c(10,rho,rho,0.1),2,2)
-D = matrix(c(1,1,1,-1),2,2)
-varp = Sigma[1,1]+Sigma[2,2]+2*Sigma[1,2] # var of the sum
-varm = Sigma[1,1]+Sigma[2,2]-2*Sigma[1,2] # var of the diff
-sd = c(sqrt(varp),sqrt(varm))
-lower = -1.5*sd; upper = 1.5*sd; init = rep(0,2)
-n = 20
-rtmvn(n,Mean,Sigma,D,lower,upper,init)
-
 }
 \references{
 Li, Y., & Ghosh, S. K. (2015). Efficient sampling methods for

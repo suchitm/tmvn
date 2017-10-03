@@ -107,6 +107,7 @@ exp_rej_r <- function(a, b = Inf, lambda = NULL)
   } else {
     lambda = lambda
   }
+
   acc = 0
   repeat
   {

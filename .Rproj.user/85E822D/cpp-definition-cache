@@ -62,14 +62,14 @@
                 "column" : 11,
                 "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtmvn.cpp",
                 "kind" : 6,
-                "line" : 42,
+                "line" : 29,
                 "name" : "rtmvn_gibbs(int, int, arma::vec, arma::mat, arma::mat, arma::vec, arma::vec, arma::vec)",
                 "parent_name" : "",
                 "usr" : "c:@F@rtmvn_gibbs#I#I#$@N@arma@C@Col>#d#$@N@arma@C@Mat>#d#S1_#S0_#S0_#S0_#"
             }
         ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtmvn.cpp",
-        "file_last_write" : 1506736272
+        "file_last_write" : 1506989827
     },
     {
         "definitions" : [
@@ -84,7 +84,7 @@
             }
         ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/rtuvn.cpp",
-        "file_last_write" : 1506715525
+        "file_last_write" : 1506985811
     },
     {
         "definitions" : [
@@ -144,7 +144,7 @@
             }
         ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/samp_cases.cpp",
-        "file_last_write" : 1506711135
+        "file_last_write" : 1506989672
     },
     {
         "definitions" : [
@@ -186,6 +186,6 @@
             }
         ],
         "file" : "/home/suchit/Desktop/Link to Research/tmvn/src/sampling_methods.cpp",
-        "file_last_write" : 1506687748
+        "file_last_write" : 1506989924
     }
 ]

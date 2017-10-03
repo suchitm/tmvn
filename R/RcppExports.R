@@ -55,14 +55,14 @@ lower_b2 <- function(a) {
     .Call('_tmvn_lower_b2', PACKAGE = 'tmvn', a)
 }
 
-#' Truncated Multivariate Normal Distribution
+#' Gibbs sampler for the Truncated Multivariate Normal Distribution
 #'
 #' Random vector generation for the truncated multivariate normal distribution
 #'     using a Gibbs sampler.
 #'
 #' @param n number of samples to be generated
 #' @param p dimension of the distribution to sample
-#' @param R  matrix of linear constraints
+#' @param R matrix of linear constraints
 #' @param a vector of lower bounds
 #' @param b vector of upper bounds
 #' @param z vector of initial values for the Gibbs sampler.
@@ -73,19 +73,6 @@ lower_b2 <- function(a) {
 #'     truncated multivariate normal and student-t distributions subject to
 #'     linear inequality constraints. Journal of Statistical Theory and
 #'     Practice, 9(4), 712-732.
-#'
-#' @examples
-#' Mean = rep(0,2)
-#' rho = 0.5
-#' Sigma = matrix(c(10,rho,rho,0.1),2,2)
-#' D = matrix(c(1,1,1,-1),2,2)
-#' varp = Sigma[1,1]+Sigma[2,2]+2*Sigma[1,2] # var of the sum
-#' varm = Sigma[1,1]+Sigma[2,2]-2*Sigma[1,2] # var of the diff
-#' sd = c(sqrt(varp),sqrt(varm))
-#' lower = -1.5*sd; upper = 1.5*sd; init = rep(0,2)
-#' n = 20
-#' rtmvn(n,Mean,Sigma,D,lower,upper,init)
-#'
 #' @export
 rtmvn_gibbs <- function(n, p, Mean, Sigma_chol, R, a, b, z) {
     .Call('_tmvn_rtmvn_gibbs', PACKAGE = 'tmvn', n, p, Mean, Sigma_chol, R, a, b, z)
