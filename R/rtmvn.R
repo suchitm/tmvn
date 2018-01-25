@@ -72,6 +72,17 @@ rtmvn = function(n, Mean, Sigma = NULL, D, lower, upper, init,
   p = ncol(R)
   z = forwardsolve(l = Sigma_chol, x = init - Mean)
 
+  # if the matrix package is loaded and sparse matrix types are used, they
+  # are incompatible with Armadillo. So I have to convert everything to a 
+  # regular matrix of a vector
+  Mean = as.vector(Mean)
+  a = as.vector(a)
+  b = as.vector(b)
+  Sigma_chol = as.matrix(Sigma_chol)
+  R = as.matrix(R)
+  n = as.numeric(n)
+  p = as.numeric(p)
+  
   x = rtmvn_gibbs(n, p, Mean, Sigma_chol, R, a, b, z)
 
   return(x)
@@ -198,8 +209,7 @@ rtmvn_r = function(n, Mean, Sigma = NULL, D, lower, upper, init,
     }
 
     # for the original results
-    x = Sigma_chol %*% z + Mean
-    keep_x[, i] = x
+    keep_x[, i] = as.vector(Sigma_chol %*% z + Mean)
   }
   return(keep_x)
 }
