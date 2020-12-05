@@ -18,7 +18,9 @@ LazyData: true
 RoxygenNote: 5.0.1
 LinkingTo: 
   Rcpp,
-  RcppEigen
+  RcppEigen, 
+  RcppArmadillo
 Imports: 
     RcppEigen,
-    Rcpp
+    Rcpp,
+    RcppArmadillo
