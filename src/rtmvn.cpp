@@ -30,7 +30,6 @@ arma::mat rtmvn_gibbs(int n, int p, arma::vec Mean, arma::mat Sigma_chol,
                       arma::mat R, arma::vec a, arma::vec b, arma::vec z)
 {
   arma::mat keep_x(p, n);
-  int nrow_R = R.n_rows;
   arma::vec temp;
 
   // std::cout << "R: \n" << R << endl;
